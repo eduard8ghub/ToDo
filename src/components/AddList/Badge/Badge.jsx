@@ -3,8 +3,8 @@ import classNames from "classnames";
 
 import "./Badge.scss";
 
-const Badge = ({color, onClick, className}) => {
-    return <i onClick={onClick} className={`badge badge--${color} ` + classNames(className)}/>
+const Badge = ({colors, onClick, className}) => {
+    return <i className={`badge badge--${colors} ` + classNames(className)} onClick={onClick}/>
 };
 
 export default Badge;

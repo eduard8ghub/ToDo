@@ -31,6 +31,14 @@
     width: 100%;
     margin-bottom: 13px;
   }
+  .inputError {
+    border: 1px solid crimson;
+  }
+  .err {
+    color: crimson;
+    margin-bottom: 15px;
+    margin-top: -10px;
+  }
   .button {
     width: 100%;
     color: #fff;

@@ -1,9 +1,42 @@
+.todo__tasks-title {
+  border-bottom: 1px solid #F2F2F2;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  &:hover img{
+    transform: scale(1);
+  }
+  span {
+    font-weight: bold;
+    font-size: 32px;
+    color: #64C4ED;
+    margin-right: 15px;
+  }
+  i {
+    opacity: 0.18;
+    cursor: pointer;
+    transition: all .25s;
+    &:hover {
+      opacity: 0.3;
+    }
+    &:active {
+      opacity: 0.5;
+    }
+    img {
+      transition: all 0.25s;
+      transform: scale(0.0);
+    }
+  }
+}
+
 .tasks__list {
   &-item {
     display: flex;
     align-items: center;
     position: relative;
     cursor: pointer;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
     &:hover .check {
       border: 2px solid #E8E8E8;
       background-color: #E8E8E8;
@@ -14,7 +47,10 @@
     &:hover .check.checked svg path {
       stroke: #fff;
     }
-    &:hover .remove_item {
+    &:hover .remove_item,.edit_item {
+      transform: scale(1);
+    }
+    &:hover .edit_item {
       transform: scale(1);
     }
     .check {
@@ -27,7 +63,7 @@
       border-radius: 100%;
       margin-right: 15px;
       transition: all .05s;
-      svg {
+      img {
         position: absolute;
         top: 4px;
         left: 3px;
@@ -40,18 +76,25 @@
     span {
       font-size: 16px;
     }
-    .remove_item {
+    .remove_item,.edit_item {
       opacity: 0.18;
       position: absolute;
-      right: 0;
       transition: all .25s;
       transform: scale(0);
       &:hover {
         opacity: 0.3;
+        transform: scale(1.2);
       }
       &:active {
         opacity: 0.5;
       }
+    }
+    .remove_item {
+      right: 0;
+    }
+    .edit_item {
+      width: 12px;
+      right: 20px;
     }
   }
 }
