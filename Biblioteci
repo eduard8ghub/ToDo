@@ -1,0 +1,12 @@
+Biblioteci!!
+
+
+Style:
+ -scss/sass
+
+
+ Redux:
+    -REDUX
+    -React-Redux
+    -redux-thunk
+    -yarn add formik
