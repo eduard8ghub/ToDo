@@ -34,6 +34,17 @@
       "id": 7,
       "name": "Курс по ReactJS",
       "colorId": 7
+    },
+    {
+      "name": "gsdhsdh",
+      "colorId": 8,
+      "tasks": [],
+      "color": {
+        "id": 8,
+        "hex": "#FF6464",
+        "name": "red"
+      },
+      "id": 8
     }
   ],
   "tasks": [
@@ -120,6 +131,12 @@
       "text": "Сделали удаление и редактирование задач и списков",
       "completed": true,
       "id": 17
+    },
+    {
+      "listId": 8,
+      "text": "knjnknkjn",
+      "completed": false,
+      "id": 18
     }
   ],
   "colors": [
