@@ -4,6 +4,8 @@ export const SET_TASKS = "SET_TASKS";
 export const CHANGE_TASK_TITLE = "CHANGE_TASK_TITLE";
 export const ADD_NEW_TASK = "ADD_NEW_TASK";
 export const CHANGE_TASK_CHECK = "CHANGE_TASK_CHECK";
+export const CHANGE_TASK_TEXT = "CHANGE_TASK_TEXT";
+export const DELETE_TASK = "DELETE_TASK";
 
 
 export const setTasks = (tasks) => ({
@@ -32,12 +34,30 @@ export const onChangeCheckTasks = (payload) => {
 
 }};
 
+export const onChangeTasksText = (payload) => {
+    return {
+    type: CHANGE_TASK_TEXT,
+        payload
+
+}};
+
+export const onDeleteTask = (id, listId) => {
+    return {
+    type: DELETE_TASK,
+        id,
+        listId
+
+}};
+
+
 export const getTasks = () => (dispatch) => {
     todoAPI.getTasks()
         .then(data => {
             dispatch(setTasks(data));
         })
 };
+
+
 export const changeTaskTitle = (text, id) => (dispatch) => {
     todoAPI.changeTaskTitle(text, id)
         .then(data => {
@@ -58,3 +78,16 @@ export const changeTaskCheck = (checkStatus, id) => (dispatch) => {
         })
 };
 
+export const onChangeTaskText = (taskText, id) => (dispatch) => {
+    todoAPI.changeTaskText(taskText, id)
+        .then(data => {
+            dispatch(onChangeTasksText(data));
+        })
+};
+
+export const deleteTaskItem = (id, listId) => (dispatch) => {
+    todoAPI.deleteTask(id)
+        .then((data) => {
+            dispatch(onDeleteTask(id, listId))
+        })
+};

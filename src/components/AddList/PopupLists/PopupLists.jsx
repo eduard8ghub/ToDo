@@ -7,14 +7,13 @@ import iconClose from "./../../../assets/img/close.svg"
 import {ErrorMessage, Formik} from "formik";
 
 const PopupLists = ({colors, setVisiblePopup, visiblePopup, addList}) => {
-    const [selectedColor, setColor] = useState(colors[0].id);
-
+    const [selectedColor, setColor] = useState(colors[0]);
     return (
         <>
             <div className={classNames('add-list__popup', {"visible__popup": visiblePopup})}>
 
                 <Formik
-                    initialValues={{listName: '', colorId: selectedColor}}
+                    initialValues={{listName: '', color: selectedColor}}
                     validate={values => {
                         const errors = {};
                         if (!values.listName) {
@@ -23,7 +22,8 @@ const PopupLists = ({colors, setVisiblePopup, visiblePopup, addList}) => {
                         return errors;
                     }}
                     onSubmit={(values, {setSubmitting}) => {
-                            addList(values.listName, values.colorId);
+                            console.log(values);
+                            addList(values.listName, values.color);
                             values.listName = '';
                             setSubmitting(false);
                             setVisiblePopup()
@@ -52,12 +52,12 @@ const PopupLists = ({colors, setVisiblePopup, visiblePopup, addList}) => {
                                     colors.map((color, index) => (
                                         <Badge
                                             onClick={() => {
-                                                setColor(color.id);
-                                                values.colorId = color.id
+                                                setColor(color);
+                                                values.color = color
                                             }}
                                             colors={color.name}
                                             key={index}
-                                            className={selectedColor === color.id && 'active'}
+                                            className={selectedColor.id === color.id && 'active'}
                                         />
                                     ))
                                 }
@@ -68,13 +68,8 @@ const PopupLists = ({colors, setVisiblePopup, visiblePopup, addList}) => {
                                 <img src={iconClose} alt="X"/>
 
                             </div>
-                            <button type="submit" disabled={isSubmitting} className="button" onClick={() => {
-                                // console.log({})
-                                // getNewList(newList, selectedColor);
-                                // setVisiblePopup(false);
-                                // setVisiblePopup();
-                                // setNewList('')
-                            }}>{isSubmitting ? 'Добавляется...' : 'Добавить'}</button>
+                            <button type="submit" disabled={isSubmitting} className="button">
+                                {isSubmitting ? 'Добавляется...' : 'Добавить'}</button>
                         </form>
                     )}
                 </Formik>

@@ -6,23 +6,16 @@ const instance = axios.create({
 });
 
 export const todoAPI = {
-    getLists() {
-        return instance.get('/lists')
-            .then(response => response.data)
-    },
     getListsTasks() {
-        return instance.get('/lists')
+        return instance.get('/lists?_expand=color&_embed=tasks')
             .then(response => response.data)
     },
-    addList(name, colorId) {
-        return instance.post('/lists', {
-            name, colorId
-        })
-            .then(response => response.data)
-    },
-    addListTasks(name, colorId) {
+    addList(name, color) {
         return instance.post('/lists?_expand=color&_embed=tasks', {
-            name, colorId
+            name: name,
+            colorId: color.id,
+            tasks: [],
+            color: {...color}
         })
             .then(response => response.data)
     },
@@ -53,5 +46,13 @@ export const todoAPI = {
         return instance.patch(`/tasks/${id}`, {
             completed: checkStatus
         }).then(response => response.data)
-    }
+    },
+    changeTaskText(taskText, id) {
+        return instance.patch(`/tasks/${id}`, {
+            text: taskText
+        }).then(response => response.data)
+    },
+    deleteTask(id) {
+        return instance.delete(`/tasks/${id}`)
+    },
 };

@@ -2,30 +2,37 @@
   border-bottom: 1px solid #F2F2F2;
   padding-bottom: 20px;
   margin-bottom: 30px;
-  &:hover img{
+
+  &:hover img {
     transform: scale(1);
   }
+
   span {
     font-weight: bold;
     font-size: 32px;
     color: #64C4ED;
     margin-right: 15px;
   }
+
   input {
     border: 0;
     border-bottom: 1px solid #c8c8c8;
     font-size: 18px;
   }
+
   i {
     opacity: 0.18;
     cursor: pointer;
     transition: all .25s;
+
     &:hover {
       opacity: 0.3;
     }
+
     &:active {
       opacity: 0.5;
     }
+
     img {
       transition: all 0.25s;
       transform: scale(0.0);
@@ -40,21 +47,30 @@
     position: relative;
     cursor: pointer;
     margin-bottom: 15px;
+
     &:hover .check {
       border: 2px solid #E8E8E8;
       background-color: #E8E8E8;
     }
+
     &:hover .check svg path {
       stroke: #B3B3B3;
     }
+
     &:hover .check.checked svg path {
       stroke: #fff;
     }
-    &:hover .remove_item,.edit_item {
+
+    &:hover .remove_item, .edit_item {
       transform: scale(1);
     }
+
     &:hover .edit_item {
       transform: scale(1);
+    }
+    .content__tasks {
+      display: flex;
+      align-items: center;
     }
     .check {
       display: inline-block;
@@ -66,38 +82,89 @@
       border-radius: 100%;
       margin-right: 15px;
       transition: all .05s;
+
       img {
         position: absolute;
         top: 4px;
         left: 3px;
       }
     }
+
     .check.checked {
       background-color: #4DD599;
       border: 2px solid #4DD599;
     }
+
     span {
       font-size: 16px;
     }
-    .remove_item,.edit_item {
+
+    .remove_item, .edit_item {
       opacity: 0.4;
       position: absolute;
       transition: all .25s;
       transform: scale(0);
+
       &:hover {
         opacity: 0.6;
         transform: scale(1.2);
       }
+
       &:active {
         opacity: 0.7;
       }
     }
+
     .remove_item {
       right: 0;
     }
+
     .edit_item {
       width: 12px;
       right: 20px;
+    }
+
+    .change__task {
+      width: 100%;
+
+      form {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        input {
+          width: 90%;
+          border: 0;
+          border-bottom: 1px solid #F2F2F2;
+          border-radius: 0;
+
+          &:focus {
+            border-bottom: 1px solid #b3b3b3;
+          }
+        }
+
+        button {
+          background-color: #b3b3b3;
+          opacity: 0.5;
+          transition: all 0.25s;
+          padding: 0 5px;
+          height: 26px;
+
+          &:hover {
+            opacity: 0.8;
+          }
+
+          &:active {
+            opacity: 1;
+          }
+
+          img {
+            width: 14px;
+            margin-top: 4px;
+          }
+        }
+      }
     }
   }
 }

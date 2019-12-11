@@ -5,19 +5,21 @@ import AddTask from "./AddTask/AddTask";
 
 import iconAdd from "./../../assets/img/add.svg";
 
-const Tasks = React.memo(({tasks, activeItemList, changeTaskTitle, addNewTask, changeTaskCheck}) => {
-
-    console.log(tasks);
-
+const Tasks = React.memo(({activeItemList, changeTaskTitle, addNewTask, changeTaskCheck, listTasks, onChangeTaskText, deleteTaskItem}) => {
     const [visibleInput, setVisibleInput] = useState(false);
 
     return (
         <>
             {
-                <TasksList tasks={tasks[activeItemList]} changeTaskTitle={changeTaskTitle} changeTaskCheck={changeTaskCheck}/>
+                <TasksList listTasks={listTasks[activeItemList ? activeItemList : 0]}
+                           changeTaskTitle={changeTaskTitle}
+                           changeTaskCheck={changeTaskCheck}
+                           onChangeTaskText={onChangeTaskText}
+                           deleteTaskItem={deleteTaskItem}
+                />
             }
             {visibleInput ?
-                <AddTask task={tasks[activeItemList]} onHiddenInput={setVisibleInput} addNewTask={addNewTask}/> :
+                <AddTask task={listTasks[activeItemList]} onHiddenInput={setVisibleInput} addNewTask={addNewTask}/> :
                 <List
                     lists={[{name: 'Добавить папку', icon: iconAdd}]}
                     isTasksList={true}

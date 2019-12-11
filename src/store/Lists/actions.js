@@ -39,15 +39,14 @@ export const setActiveItem = (id) => ({
 
 
 
-export const getLists = () => (dispatch) => {
-    todoAPI.getLists()
+//--------------------------------------------------------------//
+
+
+
+export const getListsTasks = () => (dispatch) => {
+    todoAPI.getListsTasks()
         .then(dataLists => {
-            todoAPI.getColors().then(dataColors => {
-                dataLists.map(itemLists => (
-                    itemLists.color = dataColors.filter(itemColor => itemColor.id === itemLists.colorId)[0].name
-                ));
-                dispatch(setLists(dataLists))
-            });
+            dispatch(setLists(dataLists))
         })
 };
 
@@ -58,13 +57,10 @@ export const getColors = () => (dispatch) => {
         })
 };
 
-export const addList = (name, colorId) => (dispatch) => {
-    todoAPI.addList(name, colorId)
+export const addList = (name, color) => (dispatch) => {
+    todoAPI.addList(name, color)
         .then(dataLists => {
-            todoAPI.getColors().then(dataColors => {
-                dataLists.color = dataColors.filter(itemColor => itemColor.id === dataLists.colorId)[0].name;
-                dispatch(addNewList(dataLists))
-            });
+            dispatch(addNewList(dataLists))
         })
 };
 
