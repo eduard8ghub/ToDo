@@ -23,7 +23,7 @@ class ListContainer extends Component {
     render() {
         return (
             <>
-                <List lists={this.state.localLists}/>
+                <List lists={this.state.localLists} isAllList={true}/>
                 {
                     this.props.lists.length > 0 &&
                     <List

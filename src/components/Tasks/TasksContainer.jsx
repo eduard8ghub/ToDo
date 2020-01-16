@@ -15,11 +15,12 @@ import {
 const TasksContainer = ({getTasks, activeItemList, changeTaskTitle, addNewTask, changeTaskCheck, listTasks, onChangeTaskText, deleteTaskItem}) => {
     useEffect(() => {
         getTasks()
-    }, []);
+    }, [getTasks]);
+
 
     return (
         <>
-            <Route path="/lists/:id">
+            <Route path="/lists">
                 {
                     listTasks && listTasks.length > 0 &&
                     <Tasks

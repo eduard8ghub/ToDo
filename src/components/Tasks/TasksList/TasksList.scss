@@ -1,7 +1,17 @@
+.todo__tasks {
+  overflow: auto;
+  .todo__list {
+    margin-bottom: 35px;
+  }
+  .add-task__input {
+    margin-bottom: 10px;
+  }
+}
+
 .todo__tasks-title {
   border-bottom: 1px solid #F2F2F2;
-  padding-bottom: 20px;
-  margin-bottom: 30px;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
 
   &:hover img {
     transform: scale(1);

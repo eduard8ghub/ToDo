@@ -94,9 +94,8 @@ export const listsReducer = (state = defaultState, action) => {
                 ...state,
                 lists: [...state.lists.map(itemList => {
                     if (itemList.id === action.listId) {
-                        itemList.tasks.filter(task => task.id !== action.id)
+                        itemList.tasks = itemList.tasks.filter(task => task.id !== action.id);
                     }
-                    console.log(itemList);
                     return itemList;
                 })]
             };

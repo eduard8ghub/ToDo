@@ -4,8 +4,7 @@ import classNames from "classnames";
 import {ErrorMessage, Formik} from "formik";
 
 
-const AddTask = ({onHiddenInput, task, addNewTask}) => {
-
+const AddTask = ({onHiddenInput, taskId, addNewTask}) => {
     return (
         <div className="add-task__input">
             <Formik
@@ -18,7 +17,7 @@ const AddTask = ({onHiddenInput, task, addNewTask}) => {
                     return errors;
                 }}
                 onSubmit={(values, {setSubmitting}) => {
-                    addNewTask(values.taskText, task.id);
+                    addNewTask(values.taskText, taskId);
                     onHiddenInput(false);
                 }}
             >
