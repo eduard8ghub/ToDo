@@ -36,7 +36,7 @@
       "colorId": 7
     },
     {
-      "name": "gsdhsdh",
+      "name": "test",
       "colorId": 8,
       "tasks": [],
       "color": {
@@ -111,20 +111,8 @@
     {
       "listId": 7,
       "text": "Сделали удаление и редактирование задач и списков",
-      "completed": true,
+      "completed": false,
       "id": 17
-    },
-    {
-      "listId": 8,
-      "text": "knjnknkjn",
-      "completed": false,
-      "id": 18
-    },
-    {
-      "listId": 8,
-      "text": "123213213",
-      "completed": false,
-      "id": 20
     },
     {
       "listId": 1,
@@ -137,6 +125,12 @@
       "text": "asdsa",
       "completed": false,
       "id": 22
+    },
+    {
+      "listId": 8,
+      "text": "123",
+      "completed": true,
+      "id": 23
     }
   ],
   "colors": [

@@ -4,6 +4,7 @@ import "./List.scss";
 import classNames from "classnames";
 import Badge from "../AddList/Badge/Badge";
 
+
 const List = React.memo((props) => {
     const {lists, isRemovable, iconRemove, onSetVisiblePopup, deleteList, setActiveItem, activeItem, onAddTask, isTasksList, isAllList} = props;
     let history = useHistory();
@@ -21,8 +22,12 @@ const List = React.memo((props) => {
             {
                 lists.map((listItem, index) => (
                     <li key={index}
-                        className={classNames({'removable': isRemovable, 'active': index === activeItem})}
-
+                        className={
+                            classNames({
+                                'removable': isRemovable,
+                                'active': index === activeItem,
+                            })
+                        }
                         onClick={
                             isRemovable ? ((e) => {
                                 if (e.target.tagName !== "IMG") {
@@ -44,7 +49,7 @@ const List = React.memo((props) => {
                         {
                             isRemovable &&
                             <span className="remove_item" onClick={() => {
-                                setActiveItem(0);
+                                history.push(`/lists/1`);
                                 deleteList(listItem.id);
                             }}>
                                     <img src={iconRemove} alt="X"/>

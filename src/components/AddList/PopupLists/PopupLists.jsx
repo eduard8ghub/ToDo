@@ -22,7 +22,6 @@ const PopupLists = ({colors, setVisiblePopup, visiblePopup, addList}) => {
                         return errors;
                     }}
                     onSubmit={(values, {setSubmitting}) => {
-                            console.log(values);
                             addList(values.listName, values.color);
                             values.listName = '';
                             setSubmitting(false);
