@@ -31,12 +31,12 @@ const List = React.memo((props) => {
                         onClick={
                             isRemovable ? ((e) => {
                                 if (e.target.tagName !== "IMG") {
-                                    history.push(`/lists/${listItem.id}`);
+                                    history.push(`/ToDo/lists/${listItem.id}`);
                                 }
                             }) :
                             isAllList &&
                                 (() => {
-                                    history.push(`/lists`);
+                                    history.push(`/ToDo/lists`);
                                 })
                         }>
 
