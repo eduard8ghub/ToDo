@@ -10,7 +10,7 @@ const List = React.memo((props) => {
     let history = useHistory();
 
     useEffect(() => {
-        const historyId = history.location.pathname.split('lists/')[1];
+        const historyId = history.location.pathname.split('/lists/')[1];
         setActiveItem && setActiveItem(Number(historyId) - 1);
     }, [history.location.pathname]);
 
@@ -31,12 +31,12 @@ const List = React.memo((props) => {
                         onClick={
                             isRemovable ? ((e) => {
                                 if (e.target.tagName !== "IMG") {
-                                    history.push(`/ToDo/lists/${listItem.id}`);
+                                    history.push(`/lists/${listItem.id}`);
                                 }
                             }) :
                             isAllList &&
                                 (() => {
-                                    history.push(`/ToDo/lists`);
+                                    history.push(`/lists`);
                                 })
                         }>
 

@@ -20,7 +20,7 @@ const TasksContainer = ({getTasks, activeItemList, changeTaskTitle, addNewTask, 
 
     return (
         <>
-            <Route path="/lists">
+            <Route path="/lists/">
                 {
                     listTasks && listTasks.length > 0 &&
                     <Tasks
