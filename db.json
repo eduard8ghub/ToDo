@@ -36,7 +36,18 @@
       "colorId": 7
     },
     {
-      "name": "test",
+      "name": "Titl",
+      "colorId": 4,
+      "tasks": [],
+      "color": {
+        "id": 4,
+        "hex": "#FFBBCC",
+        "name": "pink"
+      },
+      "id": 8
+    },
+    {
+      "name": "asd",
       "colorId": 8,
       "tasks": [],
       "color": {
@@ -44,7 +55,7 @@
         "hex": "#FF6464",
         "name": "red"
       },
-      "id": 8
+      "id": 9
     }
   ],
   "tasks": [
@@ -111,26 +122,20 @@
     {
       "listId": 7,
       "text": "Сделали удаление и редактирование задач и списков",
-      "completed": false,
+      "completed": true,
       "id": 17
     },
     {
       "listId": 1,
       "text": "dasd",
-      "completed": true,
+      "completed": false,
       "id": 21
     },
     {
       "listId": 1,
       "text": "asdsa",
-      "completed": false,
-      "id": 22
-    },
-    {
-      "listId": 8,
-      "text": "123",
       "completed": true,
-      "id": 23
+      "id": 22
     }
   ],
   "colors": [

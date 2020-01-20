@@ -47,6 +47,7 @@ export const listsReducer = (state = defaultState, action) => {
                     if (item.id === action.payload.id && item.name !== action.payload.name) {
                         item.name = action.payload.name;
                     }
+                    return false;
                 })]
             };
         case ADD_NEW_TASK:
